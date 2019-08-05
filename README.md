@@ -126,6 +126,13 @@ and copy aswell the index to the dist folder
 starts an webserver
 build:prod: the same bout with -p
 
+#Working with React
+## Lection 1
+- Create component as class extend from React.Component with a render() function and a return. JSX
+- Create a div element to put it in html
+- render it to the div element
+
+
 
 
 
