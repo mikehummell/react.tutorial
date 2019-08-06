@@ -1,6 +1,20 @@
 ##
 Start:
 npm start
+##Init Fastway
+
+npm init
+npm install react, react-dom --save
+npm install webpack  webpack-dev-server  @babel/core  babel-loader @babel/preset-es2015 @babel/preset-react, @babel/preset-stage-2  @babel/preset-env --save-dev 
+
+FolderStructer
+src\index.html (html skelton with <script src="/app/bundle.js"></script>  )
+src\app\index.js
+src\app\components
+webpack.config.js (with code)
+
+package.json anpassen
+
 
 ## Why React
 - Split Webpage in component and reusable
@@ -127,10 +141,34 @@ starts an webserver
 build:prod: the same bout with -p
 
 #Working with React
-## Lection 1
+## Lection 3
 - Create component as class extend from React.Component with a render() function and a return. JSX
 - Create a div element to put it in html
 - render it to the div element
+
+## Lection 4
+two component: Main and header
+
+## Lection 5
+### From one component to another (included)
+via Props you can send data. Always in {} for sending and receiving
+```
+{this.props.age}
+{this.props.user.hobbies.map(((hobbie,i)=> <li key={i}>{hobbie}</li>))}
+```
+
+Proptype = Typdefinition of properties:
+```
+Home.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number,
+    user: PropTypes.object
+}
+```
+ChildrenProp is also possible between the component
+```
+<myComponent>myChildren</myComponent>
+```
 
 
 
