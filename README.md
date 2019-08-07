@@ -216,5 +216,21 @@ Set the stage via setState
 ## Lection 9:
 React has a virtual DOM. When samething changes it compares two virutal DOM with eachother and then put the difference to the real DOM. 
 
+## Lection 10: Stateless Component
+Component without State (But still have props)
+If possible, this should be used. Reason: Faster und predictible. 
+State Component are ticki with redux.
+From
+```
+export class Header extends React.Component {
+    render() {
+        return(
+```
+to
+```
+export const Header = (props) =>  {
+        return(
+```
+
 
 
