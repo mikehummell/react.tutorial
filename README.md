@@ -149,7 +149,7 @@ build:prod: the same bout with -p
 ## Lection 4
 two component: Main and header
 
-## Lection 5
+## Lection 5 Prop (pass something from outside to inside)
 ### From one component to another (included)
 via Props you can send data. Always in {} for sending and receiving
 ```
@@ -170,7 +170,49 @@ ChildrenProp is also possible between the component
 <myComponent>myChildren</myComponent>
 ```
 
+## Lection 6 Events
+Internal Variable build with a constructor
+Props comes form outside an is asigned to age (internal)
+```
+    constructor(props){
+        super();
+        this.age = props.age;
+    }
+```
+A Function to change the (internal) age
+```
+    onMakeOlder() {
+        this.age +=3;
+        console.log(this.age);
+    }
+```
+An the event (start with on)
+After onMakeOlder there is no () because otherwise JS would execute it imediatly
+to bind it because otherwise this.OnMakeOlder would reference to the Button itself instead of the Class
+```
+<button onClick={this.onMakeOlder.bind(this)} >MyButton</button>
+```
 
+## Lection 7 State (What happen inside and is triggerd from inised)
+Use the react property state to put in an javascript object
+```
+    constructor(props){
+        super();
+        this.state = {
+            age: props.initalAge,
+            status: 0
+        }
+    }
+```
+
+Set the stage via setState
+```
+    onMakeOlder() {
+        this.setState({
+            age: this.state.age + 3
+        });  
+    }
+```
 
 
 
