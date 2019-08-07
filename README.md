@@ -213,7 +213,8 @@ Set the stage via setState
         });  
     }
 ```
-
+## Lection 9:
+React has a virtual DOM. When samething changes it compares two virutal DOM with eachother and then put the difference to the real DOM. 
 
 
 
