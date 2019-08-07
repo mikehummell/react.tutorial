@@ -232,5 +232,22 @@ export const Header = (props) =>  {
         return(
 ```
 
+## Lection 11: Child -> Parent Communication
+From Parent to Child use props
+From Child to Parent it not possible. But you can send a reference of a function from parent to child and the call the function from child
+
+```javascript
+ onGreet() {
+        alert("Hallo!");
+ }
+render() {
+    return (
+        <Home greet={this.onGreet} />
+```
+and  on the Component
+```javascript
+<button onClick={this.props.greet}>Greet</button>
+```
+
 
 
