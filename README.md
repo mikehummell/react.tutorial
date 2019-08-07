@@ -99,7 +99,7 @@ entry: First entry point and webpack goes to all dependency
 filename: one file bundled
 publicPath: for the productive environement, where to put all item in
 
-```
+```javascript
     module: {
         loaders: [
             {
@@ -120,7 +120,7 @@ loader: only babel. test mean which file should be consider (everything therefor
 
 ### Config package.json
 
-```
+```javascript
 ...
   "scripts": {
     "start": "npm run build",
@@ -152,13 +152,13 @@ two component: Main and header
 ## Lection 5 Prop (pass something from outside to inside)
 ### From one component to another (included)
 via Props you can send data. Always in {} for sending and receiving
-```
+```javascript
 {this.props.age}
 {this.props.user.hobbies.map(((hobbie,i)=> <li key={i}>{hobbie}</li>))}
 ```
 
 Proptype = Typdefinition of properties:
-```
+```javascript
 Home.propTypes = {
     name: PropTypes.string,
     age: PropTypes.number,
@@ -166,21 +166,21 @@ Home.propTypes = {
 }
 ```
 ChildrenProp is also possible between the component
-```
+```html
 <myComponent>myChildren</myComponent>
 ```
 
 ## Lection 6 Events
 Internal Variable build with a constructor
 Props comes form outside an is asigned to age (internal)
-```
+```javascript
     constructor(props){
         super();
         this.age = props.age;
     }
 ```
 A Function to change the (internal) age
-```
+```javascript
     onMakeOlder() {
         this.age +=3;
         console.log(this.age);
@@ -189,13 +189,13 @@ A Function to change the (internal) age
 An the event (start with on)
 After onMakeOlder there is no () because otherwise JS would execute it imediatly
 to bind it because otherwise this.OnMakeOlder would reference to the Button itself instead of the Class
-```
+```html
 <button onClick={this.onMakeOlder.bind(this)} >MyButton</button>
 ```
 
 ## Lection 7 State (What happen inside and is triggerd from inised)
 Use the react property state to put in an javascript object
-```
+```javascript
     constructor(props){
         super();
         this.state = {
@@ -206,7 +206,7 @@ Use the react property state to put in an javascript object
 ```
 
 Set the stage via setState
-```
+```javascript
     onMakeOlder() {
         this.setState({
             age: this.state.age + 3
@@ -221,13 +221,13 @@ Component without State (But still have props)
 If possible, this should be used. Reason: Faster und predictible. 
 State Component are ticki with redux.
 From
-```
+```javascript
 export class Header extends React.Component {
     render() {
         return(
 ```
 to
-```
+```javascript
 export const Header = (props) =>  {
         return(
 ```
