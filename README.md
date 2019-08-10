@@ -251,3 +251,5 @@ and  on the Component
 
 
 
+## Lection 13: Two Way Binding
+With events. Very complicated. -> Therefore Redux
