@@ -253,3 +253,14 @@ and  on the Component
 
 ## Lection 13: Two Way Binding
 With events. Very complicated. -> Therefore Redux
+
+## Lection 14: Lifecycle
+
+- componentWillMount -> Immediatly before inital rendering
+- componentDidMount -> Immediatly after inital rendering
+- componentWillReceiveProps -> When component receives new props
+- shouldComponentUpdate -> Before rendering, after receiving new props or state
+        return false to prevent rendering
+- componentWillUpdate -> Before rendering, after receiving new props or state
+- componentDidDupate -> After component update are flushed to the DOM
+- componentWillUnmount -> Immediatly before removing component from the DOM
