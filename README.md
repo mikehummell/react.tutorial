@@ -264,3 +264,65 @@ With events. Very complicated. -> Therefore Redux
 - componentWillUpdate -> Before rendering, after receiving new props or state
 - componentDidDupate -> After component update are flushed to the DOM
 - componentWillUnmount -> Immediatly before removing component from the DOM
+
+## Lection 15: Routing
+Single Page App
+Handle change, URL imput, changes by link should be handel by react (Path). 
+Load Page from url. Basic navigation
+
+To create a navigation
+To load it into Root component
+```javascript
+            <BrowserRouter>
+                <div>
+                    <Root >
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/user" component={User}/>
+                        <Route path="/home" component={Home}/>
+                    </Root>
+                </div>
+            </BrowserRouter>
+```
+
+With this.props.children it takes the passed component
+```javascript
+export class Root extends React.Component {
+    render() {
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-xs-10 col-xs-offset-1">
+                        <Header />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-10 col-xs-offset-1">
+                        {this.props.children}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+```
+## Lection 16: 
+Link to other component
+
+```javascript
+                        <li><NavLink to={"/home"} activeStyle={{color:"red"}} activeClassName={"active"}>Home</NavLink></li>
+                        <li><NavLink to={"/user"} activeStyle={{color:"red"}} activeClassName={"active"}>User</NavLink></li>
+```
+or via function (from a button)
+```javascript
+    onNavigateHome() {
+        this.props.history.push("/home");
+    }
+```
+
+
+### Parameter passing
+```javascript
+<Route path="/user/:id" component={User}/>
+...
+<p>User ID: {this.props.match.params.id}</p>
+```
